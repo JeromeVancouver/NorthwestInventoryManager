@@ -248,7 +248,7 @@ namespace NorthwestInventoryManager
 
         public static fmInvoice FM_INVOICE;
         public static fmPacklist FM_PACKLIST;
-        public static fmWorkOrder FM_WORK_ORDER;
+        public static fmWorkorder FM_WORK_ORDER;
         public static fmProjectCosting FM_PROJECT_COSTING;
         public static fmShortage FM_SHORTAGE;
         public static fmAllocation FM_ALLOCATION;
@@ -256,6 +256,7 @@ namespace NorthwestInventoryManager
         public static fmReceiving FM_RECEIVING;
         public static fmFullLabel FM_FULL_LABEL;
         public static fmPurchaseOrder FM_PURCHASE_ORDER;
+        public static fmSchedule FM_SCHEDULE;
 
         //      INVENTORY
 

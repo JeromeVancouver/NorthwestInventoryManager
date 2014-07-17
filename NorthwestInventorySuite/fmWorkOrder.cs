@@ -14,16 +14,16 @@ using MySql.Data.MySqlClient;
 
 namespace NorthwestInventoryManager
 {
-    public partial class fmWorkOrder : Form
+    public partial class fmWorkorder : Form
     {
         public string orderid;
 
-        public fmWorkOrder()
+        public fmWorkorder()
         {
             InitializeComponent();
         }
 
-        public fmWorkOrder(string order)
+        public fmWorkorder(string order)
         {
             InitializeComponent();
             orderid = order;
@@ -31,28 +31,32 @@ namespace NorthwestInventoryManager
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            crystalReportViewer1.Top = 0;
             try
             {
                 ReportDocument cryRpt = new ReportDocument();
-                string dir = System.IO.Directory.GetCurrentDirectory(); dir = "WorkOrder.rpt";
+                string dir = System.IO.Directory.GetCurrentDirectory(); dir = "Default_WorkOrder.rpt";
                 cryRpt.Load(dir);
 
-                ConnectionInfo crConnectionInfo = new ConnectionInfo();
-                crConnectionInfo.ServerName = "NWAS TEST";
-                crConnectionInfo.DatabaseName = "north930_test";
-                crConnectionInfo.UserID = "north930_test";
-                crConnectionInfo.Password = "Pinnacle2013";
+                /*ConnectionInfo crConnectionInfo = new ConnectionInfo();
+                crConnectionInfo.ServerName = MysqlInterface.host;
+                crConnectionInfo.DatabaseName = MysqlInterface.dbase;
+                crConnectionInfo.UserID = MysqlInterface.user;
+                crConnectionInfo.Password = MysqlInterface.password;
                 crConnectionInfo.AllowCustomConnection = true;
                 Tables crTables;
-
+            
                 crTables = cryRpt.Database.Tables;
                 foreach (CrystalDecisions.CrystalReports.Engine.Table crTable in crTables)
                 {
                     TableLogOnInfo myTableLogonInfo = crTable.LogOnInfo;
-                    myTableLogonInfo.ConnectionInfo = crConnectionInfo;
+                    myTableLogonInfo.ConnectionInfo.DatabaseName = MysqlInterface.dbase;
+                    myTableLogonInfo.ConnectionInfo.UserID = MysqlInterface.user;
+                    myTableLogonInfo.ConnectionInfo.Password = MysqlInterface.password;
+                    myTableLogonInfo.ConnectionInfo.ServerName = MysqlInterface.host;
                     crTable.ApplyLogOnInfo(myTableLogonInfo);
                 }
-
+                */
                 ParameterFieldDefinitions crParameterFieldDefinitions;
                 ParameterFieldDefinition crParameterFieldDefinition;
                 ParameterValues crParameterValues = new ParameterValues();

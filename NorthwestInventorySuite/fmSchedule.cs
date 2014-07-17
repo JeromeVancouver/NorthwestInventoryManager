@@ -6,41 +6,43 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using MySql.Data.MySqlClient;
 
 namespace NorthwestInventoryManager
 {
-    public partial class fmShortage : Form
+    public partial class fmSchedule : Form
     {
-        public string state;
+        public string orderid;
 
-        public fmShortage()
+
+        public fmSchedule()
         {
             InitializeComponent();
         }
 
-        public fmShortage(string status)
+        public fmSchedule(string order)
         {
             InitializeComponent();
-            state = status;
+            orderid = order;
         }
 
-        private void fmShortage_Load(object sender, EventArgs e)
+        private void fmSchedule_Load(object sender, EventArgs e)
         {
             crystalReportViewer1.Top = 0;
             try
             {
                 ReportDocument cryRpt = new ReportDocument();
-                string dir = System.IO.Directory.GetCurrentDirectory();dir = "Default_Shortage.rpt";
+                string dir = System.IO.Directory.GetCurrentDirectory();
+                dir = "Default_Schedule.rpt";
                 cryRpt.Load(dir);
                 ParameterFieldDefinitions crParameterFieldDefinitions;
                 ParameterFieldDefinition crParameterFieldDefinition;
                 ParameterValues crParameterValues = new ParameterValues();
                 ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
 
-                crParameterDiscreteValue.Value = state.ToString();
+                crParameterDiscreteValue.Value = orderid;
                 crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = crParameterFieldDefinitions["State"];
                 crParameterValues = crParameterFieldDefinition.CurrentValues;
@@ -48,9 +50,9 @@ namespace NorthwestInventoryManager
                 crParameterValues.Clear();
                 crParameterValues.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
-                crystalReportViewer1.ReportSource = cryRpt;
-                //crystalReportViewer1.RefreshReport();
 
+                crystalReportViewer1.ReportSource = cryRpt;
+                //crystalReportViewer1.RefreshReport(); 
 
             }
             catch (LogOnException)
@@ -66,5 +68,7 @@ namespace NorthwestInventoryManager
                 MessageBox.Show(ex.Message);
             }
         }
+
+
     }
 }

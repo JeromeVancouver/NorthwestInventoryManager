@@ -118,8 +118,8 @@ namespace NorthwestInventoryManager
 
         private void truckSchedulerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Globals.FM_TRUCK_SCHEDULER = new fmTruckScheduler();
-            Globals.FM_TRUCK_SCHEDULER.Show();
+            Globals.FM_SCHEDULE = new fmSchedule("Released");
+            Globals.FM_SCHEDULE.Show();
         }
 
         private void substitutionToolStripMenuItem_Click(object sender, EventArgs e)

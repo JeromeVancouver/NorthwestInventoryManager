@@ -16,14 +16,14 @@ namespace NorthwestInventoryManager {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Default_Shortage : ReportClass {
+    public class Default_PurchaseOrder : ReportClass {
         
-        public Default_Shortage() {
+        public Default_PurchaseOrder() {
         }
         
         public override string ResourceName {
             get {
-                return "Default_Shortage.rpt";
+                return "Default_PurchaseOrder.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace NorthwestInventoryManager {
         
         public override string FullResourceName {
             get {
-                return "NorthwestInventoryManager.Default_Shortage.rpt";
+                return "NorthwestInventoryManager.Default_PurchaseOrder.rpt";
             }
             set {
                 // Do nothing
@@ -122,7 +122,7 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_State {
+        public CrystalDecisions.Shared.IParameterField Parameter_orderid {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -130,9 +130,9 @@ namespace NorthwestInventoryManager {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDefault_Shortage : Component, ICachedReport {
+    public class CachedDefault_PurchaseOrder : Component, ICachedReport {
         
-        public CachedDefault_Shortage() {
+        public CachedDefault_PurchaseOrder() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace NorthwestInventoryManager {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Default_Shortage rpt = new Default_Shortage();
+            Default_PurchaseOrder rpt = new Default_PurchaseOrder();
             rpt.Site = this.Site;
             return rpt;
         }

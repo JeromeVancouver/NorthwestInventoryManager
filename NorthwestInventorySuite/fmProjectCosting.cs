@@ -31,11 +31,12 @@ namespace NorthwestInventoryManager
 
         private void fmProjectCosting_Load(object sender, EventArgs e)
         {
+            crystalReportViewer1.Top = 0;
             try
             {
                 ReportDocument cryRpt = new ReportDocument();
                 string dir = System.IO.Directory.GetCurrentDirectory();
-                dir = "ProjectCosting.rpt";
+                dir = "Default_ProjectCost.rpt";
                 cryRpt.Load(dir);
                 ParameterFieldDefinitions crParameterFieldDefinitions;
                 ParameterFieldDefinition crParameterFieldDefinition;

@@ -36,7 +36,7 @@ namespace NorthwestInventoryManager
             {
                 ReportDocument cryRpt = new ReportDocument();
                 string dir = System.IO.Directory.GetCurrentDirectory();
-                dir = "Packlist.rpt";
+                dir = "Default_Packlist.rpt";
                 cryRpt.Load(dir);
                 ParameterFieldDefinitions crParameterFieldDefinitions;
                 ParameterFieldDefinition crParameterFieldDefinition;
@@ -69,6 +69,11 @@ namespace NorthwestInventoryManager
                 MessageBox.Show (ex.Message);
             }
             
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            crystalReportViewer1.Top = 0;
         }
     }
 }

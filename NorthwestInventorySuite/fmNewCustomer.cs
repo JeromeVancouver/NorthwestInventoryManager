@@ -38,7 +38,7 @@ namespace NorthwestInventoryManager
                 con.Open(); //open the connection
 
                 string cmdText = "INSERT INTO customer (id, name, address, bill_name, bill_address, discount, contact, phone, fax, email, carrier_id, shipto_id, state, pst_num, notes)" +
-                "VALUES(@id, @name, @address, @bill_name, @bill_address, '', '', '', '', '', '', '', '', '', '')";
+                "VALUES(@id, @name, @address, @bill_name, @bill_address, 1.0, '', '', '', '', '', '', '', '', '')";
         
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 cmd.Prepare();

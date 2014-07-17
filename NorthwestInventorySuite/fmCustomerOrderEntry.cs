@@ -148,22 +148,6 @@ namespace NorthwestInventoryManager
             if (!rdr.IsDBNull(6)) { gst = Math.Round(rdr.GetDouble(6), 2); ORDER_ARRAY[rowCount, CONST_GST] = gst.ToString(); }
             if (!rdr.IsDBNull(7)) { pst = Math.Round(rdr.GetDouble(7), 2); ORDER_ARRAY[rowCount, CONST_PST] = pst.ToString(); }
             if (!rdr.IsDBNull(8)) { notes = rdr.GetString(8); ORDER_ARRAY[rowCount, CONST_NOTES] = notes; }
-            if (!rdr.IsDBNull(9)) { temp = rdr.GetString(9); ORDER_ARRAY[rowCount, CONST_STYLE] = temp; }
-            if (!rdr.IsDBNull(10)) { temp = rdr.GetString(10); ORDER_ARRAY[rowCount, CONST_WIDTH] = temp; }
-            if (!rdr.IsDBNull(11)) { temp = rdr.GetString(11); ORDER_ARRAY[rowCount, CONST_HEIGHT] = temp; }
-            if (!rdr.IsDBNull(12)) { temp = rdr.GetString(12); ORDER_ARRAY[rowCount, CONST_JAMB_TYPE] = temp; }
-            if (!rdr.IsDBNull(13)) { temp = rdr.GetString(13); ORDER_ARRAY[rowCount, CONST_JAMB_SIZE] = temp; }
-            if (!rdr.IsDBNull(14)) { temp = rdr.GetString(14); ORDER_ARRAY[rowCount, CONST_SILL] = temp; }
-            if (!rdr.IsDBNull(15)) { temp = rdr.GetString(15); ORDER_ARRAY[rowCount, CONST_WS] = temp; }
-            if (!rdr.IsDBNull(16)) { temp = rdr.GetString(16); ORDER_ARRAY[rowCount, CONST_DS] = temp; }
-            if (!rdr.IsDBNull(17)) { temp = rdr.GetString(17); ORDER_ARRAY[rowCount, CONST_BM] = temp; }
-            if (!rdr.IsDBNull(18)) { temp = rdr.GetString(18); ORDER_ARRAY[rowCount, CONST_DRILL] = temp; }
-            if (!rdr.IsDBNull(19)) { temp = rdr.GetString(19); ORDER_ARRAY[rowCount, CONST_LATCH] = temp; }
-            if (!rdr.IsDBNull(20)) { temp = rdr.GetString(20); ORDER_ARRAY[rowCount, CONST_STRIKE] = temp; }
-            if (!rdr.IsDBNull(21)) { temp = rdr.GetString(21); ORDER_ARRAY[rowCount, CONST_HINGE] = temp; }
-            if (!rdr.IsDBNull(22)) { temp = rdr.GetString(22); ORDER_ARRAY[rowCount, CONST_COLOUR] = temp; }
-            if (!rdr.IsDBNull(23)) { temp = rdr.GetString(23); ORDER_ARRAY[rowCount, CONST_CORE] = temp; }
-            if (!rdr.IsDBNull(24)) { temp = rdr.GetString(24); ORDER_ARRAY[rowCount, CONST_THICKNESS] = temp; }
 
 
             bool cust = false;
@@ -217,9 +201,7 @@ namespace NorthwestInventoryManager
                     for (int j = 0; j < 25; j++)
                         ORDER_ARRAY[i, j] = "";
 
-                sqlqry = "SELECT line_no, part_id, description, ordered_qty, unit_price, modifier, gst, pst, notes, " + 
-                            "style, width, height, jamb_type, jamb_size, sill, ws, ds, bm, drill, latch, strike, hinge, " +
-                            "colour, core, thickness " + 
+                sqlqry = "SELECT line_no, part_id, description, ordered_qty, unit_price, modifier, gst, pst, notes " + 
                             "FROM cust_order_line " + 
                             "where cust_order_id = '" + oid + "' order by line_no;";
                 rdr = MysqlInterface.DoQuery(sqlqry);
@@ -844,9 +826,6 @@ namespace NorthwestInventoryManager
             else
                 mod = 'M';
 
-            if(mod == 'C')
-                GetDoorSpecs(desc);
-
             string partid = ORDER_ARRAY[index, CONST_PARTID];
             string ordered = ORDER_ARRAY[index, CONST_ORDERED];
             string unit_price = ORDER_ARRAY[index, CONST_PRICE]; 
@@ -884,11 +863,6 @@ namespace NorthwestInventoryManager
                 string query = "UPDATE cust_order_line SET part_id = '" + partid + "', description = '" + desc +
                     "', ordered_qty = " + ordered + ", unit_price = " + unit_price + ", modifier = '" + mod.ToString() +
                     "', GST = " + gst + ", PST = " + pst + ", notes = '" + notes +
-                    "', rail = '" + rail + "', stile = '" + stile + "', track = '" + track + "', glass = '" + insert +
-                    "', style = '" + style + "', width = '" + width + "', height = '" + height + "', jamb_type = '" + jtype +
-                    "', jamb_size = '" + jsize + "', sill = '" + sill + "', ws = '" + ws + "', ds = '" + ds +
-                    "', bm = '" + bm + "', drill = '" + drill + "', latch = '" + latch + "', strike = '" + strike +
-                    "', hinge = '" + hinge + "', colour = '" + colour + "', core = '" + core + "', thickness = '" + thickness +
                     "' WHERE cust_order_id = " + tbOrderId.Text + " and line_no = " + lineNo + ";";
                 //MysqlInterface.close();
                 MysqlInterface.ExecuteQuery(query);
@@ -1213,7 +1187,7 @@ namespace NorthwestInventoryManager
         private void workOrdersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             oid = tbOrderId.Text;
-            Globals.FM_WORK_ORDER = new fmWorkOrder(oid);
+            Globals.FM_WORK_ORDER = new fmWorkorder(oid);
             Globals.FM_WORK_ORDER.Show();
         }
 
@@ -2325,7 +2299,7 @@ namespace NorthwestInventoryManager
         {
             HideButtons();
             oid = tbOrderId.Text;
-            Globals.FM_WORK_ORDER = new fmWorkOrder(oid);
+            Globals.FM_WORK_ORDER = new fmWorkorder(oid);
             Globals.FM_WORK_ORDER.Show();
         }
 

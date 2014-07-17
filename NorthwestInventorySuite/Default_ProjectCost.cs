@@ -16,14 +16,14 @@ namespace NorthwestInventoryManager {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Default_Shortage : ReportClass {
+    public class Default_ProjectCost : ReportClass {
         
-        public Default_Shortage() {
+        public Default_ProjectCost() {
         }
         
         public override string ResourceName {
             get {
-                return "Default_Shortage.rpt";
+                return "Default_ProjectCost.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace NorthwestInventoryManager {
         
         public override string FullResourceName {
             get {
-                return "NorthwestInventoryManager.Default_Shortage.rpt";
+                return "NorthwestInventoryManager.Default_ProjectCost.rpt";
             }
             set {
                 // Do nothing
@@ -82,7 +82,7 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,7 +106,7 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[7];
             }
@@ -114,7 +114,7 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[8];
             }
@@ -122,7 +122,23 @@ namespace NorthwestInventoryManager {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_State {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[9];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[10];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_orderid {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -130,9 +146,9 @@ namespace NorthwestInventoryManager {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDefault_Shortage : Component, ICachedReport {
+    public class CachedDefault_ProjectCost : Component, ICachedReport {
         
-        public CachedDefault_Shortage() {
+        public CachedDefault_ProjectCost() {
         }
         
         [Browsable(false)]
@@ -169,7 +185,7 @@ namespace NorthwestInventoryManager {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Default_Shortage rpt = new Default_Shortage();
+            Default_ProjectCost rpt = new Default_ProjectCost();
             rpt.Site = this.Site;
             return rpt;
         }

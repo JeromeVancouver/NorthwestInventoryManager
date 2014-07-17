@@ -106,6 +106,18 @@
       <DependentUpon>Default_Packlist.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Default_ProjectCost.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Default_ProjectCost.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Default_PurchaseOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Default_PurchaseOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Default_Schedule.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +147,12 @@
     </Compile>
     <Compile Include="fmSaveDialogue.Designer.cs">
       <DependentUpon>fmSaveDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSchedule.Designer.cs">
+      <DependentUpon>fmSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="fmVendLookup.cs">
       <SubType>Form</SubType>
@@ -377,6 +395,11 @@
     <Compile Include="fmInvoice.Designer.cs">
       <DependentUpon>fmInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Receiving.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -501,6 +524,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Default_Packlist.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Default_ProjectCost.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Default_ProjectCost.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default_PurchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Default_PurchaseOrder.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Default_Schedule.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Default_Schedule.cs</LastGenOutput>
@@ -518,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmSaveDialogue.resx">
       <DependentUpon>fmSaveDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSchedule.resx">
+      <DependentUpon>fmSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmVendLookup.resx">
       <DependentUpon>fmVendLookup.cs</DependentUpon>
@@ -713,14 +747,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

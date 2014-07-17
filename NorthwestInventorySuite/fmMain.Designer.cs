@@ -349,7 +349,7 @@
             this.truckSchedulerToolStripMenuItem.Name = "truckSchedulerToolStripMenuItem";
             this.truckSchedulerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
             this.truckSchedulerToolStripMenuItem.Size = new System.Drawing.Size(190, 25);
-            this.truckSchedulerToolStripMenuItem.Text = "Truck Scheduler";
+            this.truckSchedulerToolStripMenuItem.Text = "Scheule";
             this.truckSchedulerToolStripMenuItem.Click += new System.EventHandler(this.truckSchedulerToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
@@ -398,7 +398,7 @@
             this.viewHelpToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
             this.viewHelpToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(152, 40);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(147, 40);
             this.viewHelpToolStripMenuItem.Text = "View Help";
             this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click);
             // 
