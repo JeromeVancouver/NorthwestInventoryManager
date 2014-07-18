@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmCompanyCreation));
             this.label2 = new System.Windows.Forms.Label();
             this.tbCompany = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@
             this.tbCompany.Location = new System.Drawing.Point(215, 116);
             this.tbCompany.Name = "tbCompany";
             this.tbCompany.Size = new System.Drawing.Size(244, 20);
-            this.tbCompany.TabIndex = 4;
+            this.tbCompany.TabIndex = 5;
             // 
             // label1
             // 
@@ -82,8 +83,7 @@
             this.tbServer.Location = new System.Drawing.Point(171, 9);
             this.tbServer.Name = "tbServer";
             this.tbServer.Size = new System.Drawing.Size(288, 20);
-            this.tbServer.TabIndex = 6;
-            this.tbServer.Text = "";
+            this.tbServer.TabIndex = 1;
             // 
             // label3
             // 
@@ -100,8 +100,7 @@
             this.tbUser.Location = new System.Drawing.Point(171, 61);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(288, 20);
-            this.tbUser.TabIndex = 8;
-            this.tbUser.Text = "north930_test";
+            this.tbUser.TabIndex = 2;
             // 
             // label4
             // 
@@ -119,15 +118,14 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(186, 20);
-            this.tbPassword.TabIndex = 10;
-            this.tbPassword.Text = "Pinnacle2013";
+            this.tbPassword.TabIndex = 3;
             // 
             // btTest
             // 
             this.btTest.Location = new System.Drawing.Point(363, 87);
             this.btTest.Name = "btTest";
             this.btTest.Size = new System.Drawing.Size(96, 23);
-            this.btTest.TabIndex = 12;
+            this.btTest.TabIndex = 4;
             this.btTest.Text = "Test Connection";
             this.btTest.UseVisualStyleBackColor = true;
             this.btTest.Click += new System.EventHandler(this.btTest_Click);
@@ -167,42 +165,42 @@
             this.tbCountry.Location = new System.Drawing.Point(215, 194);
             this.tbCountry.Name = "tbCountry";
             this.tbCountry.Size = new System.Drawing.Size(244, 20);
-            this.tbCountry.TabIndex = 19;
+            this.tbCountry.TabIndex = 10;
             // 
             // tbPCode
             // 
             this.tbPCode.Location = new System.Drawing.Point(403, 168);
             this.tbPCode.Name = "tbPCode";
             this.tbPCode.Size = new System.Drawing.Size(56, 20);
-            this.tbPCode.TabIndex = 18;
+            this.tbPCode.TabIndex = 9;
             // 
             // tbProv
             // 
             this.tbProv.Location = new System.Drawing.Point(338, 168);
             this.tbProv.Name = "tbProv";
             this.tbProv.Size = new System.Drawing.Size(59, 20);
-            this.tbProv.TabIndex = 17;
+            this.tbProv.TabIndex = 8;
             // 
             // tbCity
             // 
             this.tbCity.Location = new System.Drawing.Point(215, 168);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(117, 20);
-            this.tbCity.TabIndex = 16;
+            this.tbCity.TabIndex = 7;
             // 
             // tbAddress
             // 
             this.tbAddress.Location = new System.Drawing.Point(215, 142);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(244, 20);
-            this.tbAddress.TabIndex = 15;
+            this.tbAddress.TabIndex = 6;
             // 
             // tbSetup
             // 
             this.tbSetup.Location = new System.Drawing.Point(171, 222);
             this.tbSetup.Name = "tbSetup";
             this.tbSetup.Size = new System.Drawing.Size(125, 23);
-            this.tbSetup.TabIndex = 23;
+            this.tbSetup.TabIndex = 11;
             this.tbSetup.Text = "Set Up Database";
             this.tbSetup.UseVisualStyleBackColor = true;
             this.tbSetup.Click += new System.EventHandler(this.tbSetup_Click);
@@ -219,11 +217,12 @@
             // 
             // tbDatabase
             // 
+            this.tbDatabase.Enabled = false;
             this.tbDatabase.Location = new System.Drawing.Point(171, 35);
             this.tbDatabase.Name = "tbDatabase";
             this.tbDatabase.Size = new System.Drawing.Size(288, 20);
             this.tbDatabase.TabIndex = 24;
-            this.tbDatabase.Text = "north930_test";
+            this.tbDatabase.Text = "nw_inv";
             // 
             // fmCompanyCreation
             // 
@@ -250,6 +249,7 @@
             this.Controls.Add(this.tbServer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbCompany);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmCompanyCreation";
             this.Text = "fmCompanyCreation";
             this.Load += new System.EventHandler(this.fmCompanyCreation_Load);

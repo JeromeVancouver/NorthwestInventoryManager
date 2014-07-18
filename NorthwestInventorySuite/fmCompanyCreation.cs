@@ -50,7 +50,7 @@ namespace NorthwestInventoryManager
 
             MysqlInterface.ExecuteQuery(str);
 
-            string text = File.ReadAllText("loader file.sql");
+            string text = File.ReadAllText("Clear Data.sql");
 
             MysqlInterface.ExecuteQuery(text);
 
